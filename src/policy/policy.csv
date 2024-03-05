@@ -1,0 +1,20 @@
+p, 1, default, projectA, create, deny 
+p, 1, default, projectA, update, deny
+p, 1, default, projectA, delete, deny
+
+p, 1, audience:innerCircle, privateA, view:*, allow
+p, 2, audience:innerCircle,^.*$, view:*, allow
+p, 2, audience:innerCircle,project,subscriotion, allow
+
+p, 1, audience:default, privateA, view:icoDate, allow,
+p, 1, audience:default, privateA, view:ppDate, allow
+p, 1, audience:default, privateA, view:price, allow
+p, 1, audience:default, privateA, view:whitepaper, deny
+p, 1, audience:default, privateA, subscriotion, deny
+p, 1, audience:default, privateA, view:name, allow
+p, 1, audience:default, privateA, view:description, allow
+p, 1, audience:default, privateA, view:id, allow
+p, 1, audience:default, tokenA, view:price, deny
+p, 2, audience:default, ^(?!.*\bprivateA\b).*$, view:*, allow
+
+
