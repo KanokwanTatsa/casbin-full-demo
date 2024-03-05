@@ -5,7 +5,6 @@ import {
   registerEnumType,
 } from '@nestjs/graphql';
 import { Project } from '../project.entity';
-import { checkFieldPermissionsGraphql } from '../project.middleware';
 
 export enum FieldPermissionsError {
   FIELD_FORBIDDEN = 'FIELD_FORBIDDEN',
