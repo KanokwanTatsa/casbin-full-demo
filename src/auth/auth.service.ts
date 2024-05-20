@@ -1,5 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UserService } from '../user/user.service';
+import { User, UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
@@ -28,5 +28,11 @@ export class AuthService {
         expiresIn: '1h',
       }),
     };
+  }
+
+  async decodeJWTUser(jwtToken: string): Promise<User> {
+    const payload: User = await this.jwtService.decode(jwtToken);
+    const user = await this.usersService.findOne(payload?.username);
+    return user;
   }
 }

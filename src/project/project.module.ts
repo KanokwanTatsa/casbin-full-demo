@@ -3,8 +3,8 @@ import { ProjectResolver } from './project.resolver';
 import { ProjectService } from './project.service';
 import {
   projectProviders,
-  projectInterceptorProviders,
-  projectGuardProviders,
+  // projectInterceptorProviders,
+  // projectGuardProviders,
 } from './project.providers';
 import { DatabaseModule } from 'src/database/database.module';
 import { PolicyModule } from 'src/policy/policy.module';
@@ -15,8 +15,8 @@ import { PolicyModule } from 'src/policy/policy.module';
     ProjectResolver,
     ProjectService,
     ...projectProviders,
-    ...projectInterceptorProviders,
-    ...projectGuardProviders,
+    // ...projectInterceptorProviders,
+    // ...projectGuardProviders,
   ],
 })
 export class ProjectModule {}

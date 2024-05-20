@@ -12,6 +12,8 @@ import { join } from 'path';
 import { PermissionModule } from './permission/permission.module';
 import { DatabaseModule } from './database/database.module';
 import { PolicyModule } from './policy/policy.module';
+import { APP_GUARD } from '@nestjs/core';
+import { RoleGuard } from './shared/guards/role.guard';
 
 @Module({
   imports: [
@@ -32,6 +34,12 @@ import { PolicyModule } from './policy/policy.module';
     PolicyModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: RoleGuard,
+    },
+  ],
 })
 export class AppModule {}

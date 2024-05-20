@@ -1,7 +1,17 @@
 import { Injectable } from '@nestjs/common';
 
 // This should be a real class/interface representing a user entity
-export type User = any;
+export type UserTag = {
+  tagId: number;
+  tagName: string;
+};
+export type User = {
+  userId: number;
+  username: string;
+  password: string;
+  investorLevel: string;
+  tags: UserTag[];
+};
 
 @Injectable()
 export class UserService {
@@ -31,6 +41,66 @@ export class UserService {
       password: 'richer123',
       investorLevel: 'UNHW',
       tags: [],
+    },
+    {
+      userId: 4,
+      username: 'testA',
+      password: 'testA123',
+      investorLevel: 'UNHW',
+      tags: [
+        {
+          tagId: 1,
+          tagName: 'onboard_incomplete',
+        },
+      ],
+    },
+    {
+      userId: 5,
+      username: 'testB',
+      password: 'testB123',
+      investorLevel: 'UNHW',
+      tags: [
+        {
+          tagId: 1,
+          tagName: 'onboard_complete',
+        },
+      ],
+    },
+    {
+      userId: 6,
+      username: 'testC',
+      password: 'testC123',
+      investorLevel: 'UNHW',
+      tags: [
+        {
+          tagId: 1,
+          tagName: 'onboard_complete',
+        },
+        {
+          tagId: 2,
+          tagName: 'kcy_complete',
+        },
+      ],
+    },
+    {
+      userId: 6,
+      username: 'testD',
+      password: 'testD123',
+      investorLevel: 'UNHW',
+      tags: [
+        {
+          tagId: 1,
+          tagName: 'onboard_complete',
+        },
+        {
+          tagId: 2,
+          tagName: 'kcy_complete',
+        },
+        {
+          tagId: 3,
+          tagName: 'id_card_complete',
+        },
+      ],
     },
   ];
 

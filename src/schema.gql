@@ -20,4 +20,14 @@ scalar DateTime
 
 type Query {
   projects: [Project!]!
+  project: [Project!]!
+}
+
+type Mutation {
+  createProject(input: CreateProjectInput!): Project!
+}
+
+input CreateProjectInput {
+  name: String
+  description: String
 }

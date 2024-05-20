@@ -1,0 +1,5 @@
+p, 1, onboard_incomplete, graphql:createProject, POST, deny
+p, 1, onboard_complete:kcy_complete, graphql:createProject, POST, allow
+p, 2, onboard_incomplete, graphql:projects, POST, deny
+p, 2, onboard_incomplete, rest_api:projects, POST, deny
+p, 2, onboard_complete, rest_api:projects, POST, allow
